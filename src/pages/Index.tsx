@@ -3,6 +3,7 @@ import { getNews, categoryLabels, type NewsArticle } from "@/lib/newsStore";
 import BreakingNews from "@/components/news/BreakingNews";
 import NewsCard from "@/components/news/NewsCard";
 import SocialCard from "@/components/social/SocialCard";
+import MemberCard from "@/components/members/MemberCard";
 import { Button } from "@/components/ui/button";
 
 const categories = Object.keys(categoryLabels) as NewsArticle["category"][];
