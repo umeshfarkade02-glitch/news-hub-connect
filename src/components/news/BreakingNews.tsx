@@ -7,8 +7,9 @@ const BreakingNews = ({ articles }: { articles: NewsArticle[] }) => {
   return (
     <div className="overflow-hidden border-b border-border bg-destructive text-destructive-foreground">
       <div className="container mx-auto flex items-center px-4 py-2">
-        <span className="mr-4 shrink-0 rounded bg-card px-2 py-0.5 text-xs font-bold text-destructive">
-          ब्रेकिंग
+        <span className="mr-4 flex shrink-0 items-center gap-1.5 rounded bg-card px-2 py-0.5 text-xs font-bold text-destructive">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-destructive" />
+          ताज़ा खबर
         </span>
         <div className="relative flex-1 overflow-hidden whitespace-nowrap">
           <div className="animate-marquee inline-block">

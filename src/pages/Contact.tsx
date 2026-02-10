@@ -3,38 +3,115 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
-      toast.error("सभी फ़ील्ड भरना ज़रूरी है");
+      toast.error("सभी ज़रूरी फ़ील्ड भरें");
       return;
     }
     toast.success("आपका संदेश भेज दिया गया है!");
-    setForm({ name: "", email: "", message: "" });
+    setForm({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="mb-6 text-center text-3xl font-bold text-foreground">संपर्क करें</h1>
-      <Card className="mx-auto max-w-lg">
-        <CardHeader>
-          <CardTitle>हमें संदेश भेजें</CardTitle>
-        </CardHeader>
-        <CardContent>
+      <h1 className="mb-8 text-center text-3xl font-bold text-foreground">संपर्क करें</h1>
+
+      <div className="grid gap-8 lg:grid-cols-2">
+        {/* Left - Info Cards */}
+        <div className="space-y-4">
+          <Card>
+            <CardContent className="flex items-start gap-4 p-5">
+              <div className="rounded-full bg-destructive/10 p-3">
+                <MapPin className="h-6 w-6 text-destructive" />
+              </div>
+              <div>
+                <h3 className="font-bold text-foreground">पता</h3>
+                <p className="text-sm text-muted-foreground">123, प्रेस एरिया</p>
+                <p className="text-sm text-muted-foreground">नई दिल्ली - 110001</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="flex items-start gap-4 p-5">
+              <div className="rounded-full bg-destructive/10 p-3">
+                <Phone className="h-6 w-6 text-destructive" />
+              </div>
+              <div>
+                <h3 className="font-bold text-foreground">फ़ोन</h3>
+                <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                <p className="text-sm text-muted-foreground">+91 11 2345 6789</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="flex items-start gap-4 p-5">
+              <div className="rounded-full bg-destructive/10 p-3">
+                <Mail className="h-6 w-6 text-destructive" />
+              </div>
+              <div>
+                <h3 className="font-bold text-foreground">ईमेल</h3>
+                <p className="text-sm text-muted-foreground">contact@dainiksamachar.com</p>
+                <p className="text-sm text-muted-foreground">editor@dainiksamachar.com</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="flex items-start gap-4 p-5">
+              <div className="rounded-full bg-destructive/10 p-3">
+                <Clock className="h-6 w-6 text-destructive" />
+              </div>
+              <div>
+                <h3 className="font-bold text-foreground">कार्य समय</h3>
+                <p className="text-sm text-muted-foreground">सोमवार - शनिवार</p>
+                <p className="text-sm text-muted-foreground">सुबह 9:00 - शाम 6:00</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Right - Form */}
+        <div>
+          <h2 className="mb-6 text-2xl font-bold text-foreground">हमें संदेश भेजें</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div><Label>नाम</Label><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="आपका नाम" /></div>
-            <div><Label>ईमेल</Label><Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="आपका ईमेल" /></div>
-            <div><Label>संदेश</Label><Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="आपका संदेश" rows={4} /></div>
-            <Button type="submit" className="w-full">भेजें</Button>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <Label>नाम *</Label>
+                <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="आपका नाम" />
+              </div>
+              <div>
+                <Label>ईमेल *</Label>
+                <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="आपका ईमेल" />
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <Label>फ़ोन नंबर *</Label>
+                <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="फ़ोन नंबर" />
+              </div>
+              <div>
+                <Label>विषय *</Label>
+                <Input value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="संदेश का विषय" />
+              </div>
+            </div>
+            <div>
+              <Label>संदेश *</Label>
+              <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="अपना संदेश लिखें..." rows={6} />
+            </div>
+            <Button type="submit" variant="destructive" className="w-full">संदेश भेजें</Button>
           </form>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 };
