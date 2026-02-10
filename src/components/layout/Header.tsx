@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "होम", path: "/" },
@@ -48,6 +49,7 @@ const Header = () => {
             <a href="#" className="p-1.5 text-muted-foreground hover:text-primary"><Youtube size={18} /></a>
             <a href="#" className="p-1.5 text-muted-foreground hover:text-primary"><Twitter size={18} /></a>
           </div>
+          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
