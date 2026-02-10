@@ -3,9 +3,27 @@ import { getNews, categoryLabels, type NewsArticle } from "@/lib/newsStore";
 import BreakingNews from "@/components/news/BreakingNews";
 import NewsCard from "@/components/news/NewsCard";
 import SocialCard from "@/components/social/SocialCard";
+import MemberCard from "@/components/members/MemberCard";
 import { Button } from "@/components/ui/button";
 
 const categories = Object.keys(categoryLabels) as NewsArticle["category"][];
+
+const founders = [
+  {
+    name: "राजेश शर्मा",
+    post: "संपादक",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300",
+    facebook: "#",
+    instagram: "#",
+  },
+  {
+    name: "अनीता वर्मा",
+    post: "संस्थापक",
+    imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300",
+    facebook: "#",
+    instagram: "#",
+  },
+];
 
 const Index = () => {
   const articles = getNews();
@@ -63,6 +81,16 @@ const Index = () => {
       <div className="bg-accent py-4 text-center">
         <p className="text-sm font-medium text-accent-foreground">📢 विज्ञापन स्थान — संपर्क करें: ads@hindisamachar.com</p>
       </div>
+
+      {/* Founders Section */}
+      <section className="container mx-auto px-4 py-10">
+        <h2 className="mb-6 text-center text-2xl font-bold text-foreground">हमारे बारे में</h2>
+        <div className="mx-auto grid max-w-2xl gap-6 sm:grid-cols-2">
+          {founders.map((f) => (
+            <MemberCard key={f.name} {...f} />
+          ))}
+        </div>
+      </section>
 
       {/* Social Section */}
       <section className="container mx-auto px-4 py-10">
