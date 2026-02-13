@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { getNews, categoryLabels, type NewsArticle } from "@/lib/newsStore";
 import BreakingNews from "@/components/news/BreakingNews";
 import NewsCard from "@/components/news/NewsCard";
 import SocialCard from "@/components/social/SocialCard";
 import MemberCard from "@/components/members/MemberCard";
+import AdCarousel from "@/components/ads/AdCarousel";
 import { Button } from "@/components/ui/button";
 
 const categories = Object.keys(categoryLabels) as NewsArticle["category"][];
@@ -77,10 +79,8 @@ const Index = () => {
         )}
       </section>
 
-      {/* Ad Banner */}
-      <div className="bg-accent py-4 text-center">
-        <p className="text-sm font-medium text-accent-foreground">📢 विज्ञापन स्थान — संपर्क करें: ads@hindisamachar.com</p>
-      </div>
+      {/* Ad Carousel */}
+      <AdCarousel />
 
       {/* Founders Section */}
       <section className="container mx-auto px-4 py-10">
@@ -89,6 +89,11 @@ const Index = () => {
           {founders.map((f) => (
             <MemberCard key={f.name} {...f} />
           ))}
+        </div>
+        <div className="mt-6 text-center">
+          <Link to="/about">
+            <Button variant="default" size="lg">और जानें →</Button>
+          </Link>
         </div>
       </section>
 

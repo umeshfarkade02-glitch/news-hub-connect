@@ -9,6 +9,7 @@ const navLinks = [
   { label: "हमारे बारे में", path: "/about" },
   { label: "सदस्य", path: "/members" },
   { label: "कानूनी विभाग", path: "/legal" },
+  { label: "करियर", path: "/career" },
   { label: "संपर्क करें", path: "/contact" },
 ];
 
