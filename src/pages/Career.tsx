@@ -10,6 +10,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Briefcase, GraduationCap, User, Wrench, FileText, CalendarDays } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+const FORM_ACTION = ""; // Set your form action URL here
+const FORM_METHOD = "POST"; // Set your form method here
+
 const Career = () => {
   const { toast } = useToast();
   const [experience, setExperience] = useState("fresher");
@@ -39,7 +42,7 @@ const Career = () => {
         <p className="mt-2 text-muted-foreground">हिंदी समाचार टीम में शामिल होने के लिए नीचे फॉर्म भरें</p>
       </div>
 
-      <form id="career-form" onSubmit={handleSubmit} className="mx-auto max-w-4xl space-y-8">
+      <form id="career-form" action={FORM_ACTION || undefined} method={FORM_ACTION ? FORM_METHOD : undefined} onSubmit={FORM_ACTION ? undefined : handleSubmit} className="mx-auto max-w-4xl space-y-8">
         {/* 1. Personal Details */}
         <Card>
           <CardHeader>

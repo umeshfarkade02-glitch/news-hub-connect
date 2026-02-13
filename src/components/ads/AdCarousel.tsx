@@ -44,7 +44,7 @@ const AdCarousel = () => {
   return (
     <div className="relative overflow-hidden">
       <div
-        className={`${ad.bgClass} flex min-h-[180px] flex-col items-center justify-center px-4 py-10 text-center transition-all duration-500`}
+        className={`${ad.bgClass} flex min-h-[250px] flex-col items-center justify-center px-4 py-14 text-center transition-all duration-500`}
       >
         <h3 className="text-2xl font-bold text-primary-foreground md:text-3xl">
           {ad.title}
