@@ -7,6 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 
+const FORM_ACTION = ""; // Set your form action URL here
+const FORM_METHOD = "POST"; // Set your form method here
+
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
 
@@ -83,7 +86,7 @@ const Contact = () => {
         {/* Right - Form */}
         <div>
           <h2 className="mb-6 text-2xl font-bold text-foreground">हमें संदेश भेजें</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form action={FORM_ACTION || undefined} method={FORM_ACTION ? FORM_METHOD : undefined} onSubmit={FORM_ACTION ? undefined : handleSubmit} className="space-y-4">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <Label>नाम *</Label>
