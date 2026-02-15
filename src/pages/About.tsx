@@ -1,19 +1,20 @@
 import { Target, Eye, Flag } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import MemberCard from "@/components/members/MemberCard";
+import founderPhoto from "@/assets/founder-photo.png";
 
 const founders = [
   {
     name: "राजेश शर्मा",
     post: "संपादक",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300",
+    imageUrl: founderPhoto,
     facebook: "#",
     instagram: "#",
   },
   {
     name: "अनीता वर्मा",
     post: "संस्थापक",
-    imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300",
+    imageUrl: founderPhoto,
     facebook: "#",
     instagram: "#",
   },
