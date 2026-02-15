@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
+import logoImg from "@/assets/logo.jpeg";
 
 const navLinks = [
   { label: "होम", path: "/" },
@@ -21,8 +22,9 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border bg-card shadow-sm">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold text-primary">
-          📰 हिंदी समाचार
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logoImg} alt="दैनिक भारत साम्राज्य" className="h-10 w-10 rounded-full object-cover" />
+          <span className="text-xl font-bold text-primary">दैनिक भारत साम्राज्य</span>
         </Link>
 
         {/* Desktop Nav */}

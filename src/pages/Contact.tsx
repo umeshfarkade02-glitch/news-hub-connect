@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 
-const FORM_ACTION = ""; // Set your form action URL here
+const FORM_ACTION = "https://formspree.io/f/mpqjdwpv"; // Set your form action URL here
 const FORM_METHOD = "POST"; // Set your form method here
 
 const Contact = () => {

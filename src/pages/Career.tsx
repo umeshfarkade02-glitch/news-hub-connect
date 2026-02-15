@@ -10,7 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Briefcase, GraduationCap, User, Wrench, FileText, CalendarDays } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const FORM_ACTION = ""; // Set your form action URL here
+const FORM_ACTION = "https://formspree.io/f/mpqjdwpv"; // Set your form action URL here
 const FORM_METHOD = "POST"; // Set your form method here
 
 const Career = () => {
