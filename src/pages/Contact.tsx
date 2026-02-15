@@ -90,26 +90,26 @@ const Contact = () => {
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <Label>नाम *</Label>
-                <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="आपका नाम" />
+                <Input name="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="आपका नाम" required />
               </div>
               <div>
                 <Label>ईमेल *</Label>
-                <Input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="आपका ईमेल" />
+                <Input name="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="आपका ईमेल" required />
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <Label>फ़ोन नंबर *</Label>
-                <Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="फ़ोन नंबर" />
+                <Label>फ़ोन नंबर</Label>
+                <Input name="phone" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="फ़ोन नंबर" />
               </div>
               <div>
-                <Label>विषय *</Label>
-                <Input value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="संदेश का विषय" />
+                <Label>विषय</Label>
+                <Input name="subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="संदेश का विषय" />
               </div>
             </div>
             <div>
               <Label>संदेश *</Label>
-              <Textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="अपना संदेश लिखें..." rows={6} />
+              <Textarea name="message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="अपना संदेश लिखें..." rows={6} required />
             </div>
             <Button type="submit" variant="destructive" className="w-full">संदेश भेजें</Button>
           </form>
