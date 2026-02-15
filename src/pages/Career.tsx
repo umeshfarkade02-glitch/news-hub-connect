@@ -53,46 +53,44 @@ const Career = () => {
           <CardContent className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="fullName">पूरा नाम *</Label>
-              <Input id="fullName" required placeholder="अपना पूरा नाम लिखें" />
+              <Input id="fullName" name="fullName" required placeholder="अपना पूरा नाम लिखें" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="parentName">पिता/माता का नाम *</Label>
-              <Input id="parentName" required placeholder="पिता/माता का नाम" />
+              <Input id="parentName" name="parentName" required placeholder="पिता/माता का नाम" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="dob">जन्म तिथि *</Label>
-              <Input id="dob" type="date" required />
+              <Input id="dob" name="dob" type="date" required />
             </div>
             <div className="space-y-2">
               <Label>लिंग *</Label>
-              <Select required>
-                <SelectTrigger><SelectValue placeholder="चुनें" /></SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="male">पुरुष</SelectItem>
-                  <SelectItem value="female">महिला</SelectItem>
-                  <SelectItem value="other">अन्य</SelectItem>
-                </SelectContent>
-              </Select>
+              <select name="gender" required className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <option value="">चुनें</option>
+                <option value="male">पुरुष</option>
+                <option value="female">महिला</option>
+                <option value="other">अन्य</option>
+              </select>
             </div>
             <div className="space-y-2">
               <Label htmlFor="mobile">मोबाइल नंबर *</Label>
-              <Input id="mobile" type="tel" required placeholder="10 अंकों का मोबाइल नंबर" />
+              <Input id="mobile" name="mobile" type="tel" required placeholder="10 अंकों का मोबाइल नंबर" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">ईमेल *</Label>
-              <Input id="email" type="email" required placeholder="example@email.com" />
+              <Input id="email" name="email" type="email" required placeholder="example@email.com" />
             </div>
             <div className="col-span-full space-y-2">
               <Label htmlFor="currentAddress">वर्तमान पता *</Label>
-              <Textarea id="currentAddress" required placeholder="वर्तमान पता लिखें" />
+              <Textarea id="currentAddress" name="currentAddress" required placeholder="वर्तमान पता लिखें" />
             </div>
             <div className="col-span-full space-y-2">
               <Label htmlFor="permanentAddress">स्थायी पता</Label>
-              <Textarea id="permanentAddress" placeholder="स्थायी पता लिखें" />
+              <Textarea id="permanentAddress" name="permanentAddress" placeholder="स्थायी पता लिखें" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="photo">पासपोर्ट साइज़ फोटो</Label>
-              <Input id="photo" type="file" accept="image/*" />
+              <Input id="photo" name="photo" type="file" accept="image/*" />
             </div>
           </CardContent>
         </Card>
@@ -107,23 +105,21 @@ const Career = () => {
           <CardContent className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label>आवेदन पद *</Label>
-              <Select required>
-                <SelectTrigger><SelectValue placeholder="पद चुनें" /></SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="reporter">रिपोर्टर</SelectItem>
-                  <SelectItem value="sub_editor">उप संपादक</SelectItem>
-                  <SelectItem value="anchor">न्यूज़ एंकर</SelectItem>
-                  <SelectItem value="photographer">फोटोग्राफर</SelectItem>
-                  <SelectItem value="video_editor">वीडियो एडिटर</SelectItem>
-                  <SelectItem value="social_media">सोशल मीडिया मैनेजर</SelectItem>
-                  <SelectItem value="legal">कानूनी विभाग</SelectItem>
-                  <SelectItem value="marketing">मार्केटिंग एग्जीक्यूटिव</SelectItem>
-                </SelectContent>
-              </Select>
+              <select name="position" required className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <option value="">पद चुनें</option>
+                <option value="reporter">रिपोर्टर</option>
+                <option value="sub_editor">उप संपादक</option>
+                <option value="anchor">न्यूज़ एंकर</option>
+                <option value="photographer">फोटोग्राफर</option>
+                <option value="video_editor">वीडियो एडिटर</option>
+                <option value="social_media">सोशल मीडिया मैनेजर</option>
+                <option value="legal">कानूनी विभाग</option>
+                <option value="marketing">मार्केटिंग एग्जीक्यूटिव</option>
+              </select>
             </div>
             <div className="space-y-2">
               <Label htmlFor="preferredCity">पसंदीदा स्थान (शहर)</Label>
-              <Input id="preferredCity" placeholder="शहर का नाम" />
+              <Input id="preferredCity" name="preferredCity" placeholder="शहर का नाम" />
             </div>
           </CardContent>
         </Card>
@@ -138,23 +134,23 @@ const Career = () => {
           <CardContent className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="qualification">उच्चतम योग्यता *</Label>
-              <Input id="qualification" required placeholder="जैसे: स्नातक, परास्नातक" />
+              <Input id="qualification" name="qualification" required placeholder="जैसे: स्नातक, परास्नातक" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="degree">डिग्री / कोर्स का नाम</Label>
-              <Input id="degree" placeholder="जैसे: B.A., M.A. Journalism" />
+              <Input id="degree" name="degree" placeholder="जैसे: B.A., M.A. Journalism" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="university">विश्वविद्यालय / कॉलेज</Label>
-              <Input id="university" placeholder="विश्वविद्यालय का नाम" />
+              <Input id="university" name="university" placeholder="विश्वविद्यालय का नाम" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="passingYear">उत्तीर्ण वर्ष</Label>
-              <Input id="passingYear" type="number" placeholder="जैसे: 2023" />
+              <Input id="passingYear" name="passingYear" type="number" placeholder="जैसे: 2023" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="percentage">प्रतिशत / ग्रेड</Label>
-              <Input id="percentage" placeholder="जैसे: 75% या A+" />
+              <Input id="percentage" name="percentage" placeholder="जैसे: 75% या A+" />
             </div>
           </CardContent>
         </Card>
@@ -184,23 +180,23 @@ const Career = () => {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="orgName">संगठन का नाम</Label>
-                  <Input id="orgName" placeholder="पिछली कंपनी" />
+                  <Input id="orgName" name="orgName" placeholder="पिछली कंपनी" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="designation">पद नाम</Label>
-                  <Input id="designation" placeholder="जैसे: रिपोर्टर" />
+                  <Input id="designation" name="designation" placeholder="जैसे: रिपोर्टर" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="expYears">अनुभव (वर्ष/महीने)</Label>
-                  <Input id="expYears" placeholder="जैसे: 2 वर्ष" />
+                  <Input id="expYears" name="expYears" placeholder="जैसे: 2 वर्ष" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="prevSalary">पिछला वेतन (वैकल्पिक)</Label>
-                  <Input id="prevSalary" placeholder="जैसे: ₹25,000" />
+                  <Input id="prevSalary" name="prevSalary" placeholder="जैसे: ₹25,000" />
                 </div>
                 <div className="col-span-full space-y-2">
                   <Label htmlFor="leavingReason">छोड़ने का कारण</Label>
-                  <Textarea id="leavingReason" placeholder="कारण बताएं" />
+                  <Textarea id="leavingReason" name="leavingReason" placeholder="कारण बताएं" />
                 </div>
               </div>
             )}
@@ -217,23 +213,23 @@ const Career = () => {
           <CardContent className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="writingSkill">लेखन कौशल (हिंदी/अंग्रेज़ी/क्षेत्रीय)</Label>
-              <Input id="writingSkill" placeholder="जैसे: हिंदी, अंग्रेज़ी" />
+              <Input id="writingSkill" name="writingSkill" placeholder="जैसे: हिंदी, अंग्रेज़ी" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="computerSkills">कंप्यूटर कौशल</Label>
-              <Input id="computerSkills" placeholder="MS Office, Photoshop, Video Editing" />
+              <Input id="computerSkills" name="computerSkills" placeholder="MS Office, Photoshop, Video Editing" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="reportingExp">रिपोर्टिंग / एंकरिंग अनुभव</Label>
-              <Input id="reportingExp" placeholder="अनुभव बताएं" />
+              <Input id="reportingExp" name="reportingExp" placeholder="अनुभव बताएं" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="socialMediaExp">सोशल मीडिया हैंडलिंग अनुभव</Label>
-              <Input id="socialMediaExp" placeholder="अनुभव बताएं" />
+              <Input id="socialMediaExp" name="socialMediaExp" placeholder="अनुभव बताएं" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="typingSpeed">टाइपिंग स्पीड</Label>
-              <Input id="typingSpeed" placeholder="जैसे: 40 WPM" />
+              <Input id="typingSpeed" name="typingSpeed" placeholder="जैसे: 40 WPM" />
             </div>
           </CardContent>
         </Card>
@@ -248,19 +244,19 @@ const Career = () => {
           <CardContent className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="resume">रिज़्यूमे / CV (PDF)</Label>
-              <Input id="resume" type="file" accept=".pdf,.doc,.docx" />
+              <Input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="idProof">पहचान पत्र (आधार/पैन)</Label>
-              <Input id="idProof" type="file" accept=".pdf,.jpg,.png" />
+              <Input id="idProof" name="idProof" type="file" accept=".pdf,.jpg,.png" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="expCert">अनुभव प्रमाणपत्र (यदि कोई हो)</Label>
-              <Input id="expCert" type="file" accept=".pdf,.jpg,.png" />
+              <Input id="expCert" name="expCert" type="file" accept=".pdf,.jpg,.png" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="portfolio">पोर्टफोलियो / लेखन नमूना</Label>
-              <Input id="portfolio" type="file" accept=".pdf,.doc,.docx" />
+              <Input id="portfolio" name="portfolio" type="file" accept=".pdf,.doc,.docx" />
             </div>
           </CardContent>
         </Card>
@@ -276,11 +272,11 @@ const Career = () => {
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="joinDate">कब से जुड़ सकते हैं *</Label>
-                <Input id="joinDate" type="date" required />
+                <Input id="joinDate" name="joinDate" type="date" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="expectedSalary">अपेक्षित वेतन</Label>
-                <Input id="expectedSalary" placeholder="जैसे: ₹20,000" />
+                <Input id="expectedSalary" name="expectedSalary" placeholder="जैसे: ₹20,000" />
               </div>
             </div>
             <div className="space-y-2">
