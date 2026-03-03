@@ -14,6 +14,8 @@ const navLinks = [
   { label: "संपर्क करें", path: "/contact" },
 ];
 
+const E_PAPER_URL = "https://drive.google.com/drive/folders/1tHn8nR_SLORj-9y_KI9jAmof81PbBwVx";
+
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -42,6 +44,14 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          <a
+            href={E_PAPER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground text-foreground"
+          >
+            E-Paper
+          </a>
         </nav>
 
         {/* Social + Mobile Toggle */}
@@ -81,6 +91,14 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          <a
+            href={E_PAPER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-md px-3 py-2 text-sm font-medium text-foreground"
+          >
+            E-Paper
+          </a>
           <div className="mt-3 flex gap-3 px-3">
             <a href="#" className="text-muted-foreground hover:text-primary"><Facebook size={18} /></a>
             <a href="#" className="text-muted-foreground hover:text-primary"><Instagram size={18} /></a>
