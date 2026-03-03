@@ -91,6 +91,14 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          <a
+            href={E_PAPER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-md px-3 py-2 text-sm font-medium text-foreground"
+          >
+            E-Paper
+          </a>
           <div className="mt-3 flex gap-3 px-3">
             <a href="#" className="text-muted-foreground hover:text-primary"><Facebook size={18} /></a>
             <a href="#" className="text-muted-foreground hover:text-primary"><Instagram size={18} /></a>
