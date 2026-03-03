@@ -14,6 +14,8 @@ const navLinks = [
   { label: "संपर्क करें", path: "/contact" },
 ];
 
+const E_PAPER_URL = "https://drive.google.com/drive/folders/1tHn8nR_SLORj-9y_KI9jAmof81PbBwVx";
+
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
